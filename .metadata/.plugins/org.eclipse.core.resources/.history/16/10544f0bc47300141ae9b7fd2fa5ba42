@@ -1,0 +1,111 @@
+/**
+  <p> This program is designed to calculate the main areas of support and resistance from the previous period.</p>
+
+
+ <p>PivotPoints-SOLUTION is free software: you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or (at your
+ option) any later version.</p>
+ 	
+ <p>This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ details.</p>
+ 
+ <p>You should have received a copy of the GNU General Public License along
+ with this program. If not, see http://www.gnu.org/licenses/.</p>
+ 
+ <p>Copyright Kiril Anastasov L1087591@live.tees.ac.uk   November-2014 </p>
+ */
+
+
+
+
+	
+public class PivotPoints 
+{
+	public static double previousHigh = 2048.4;
+	public static double previousLow = 2025.6;
+	public static double previousClose = 2042.9;
+	public static double pivotPoint;
+	public static double resistance1;
+	public static double support1; 
+	public static double resistance2;
+	public static double support2; 
+	public static double resistance3;
+	public static double support3; 
+	
+	public static void main(String[] args) 
+	{
+	
+		 
+		System.out.println("Pivot Point: " + getPivotPoint());
+		System.out.println("R1: " + getR1());
+		System.out.println("R2: " + getR2());
+		System.out.println("R3: " + getR3());
+		System.out.println("S1: " + getS1());
+		System.out.println("S2: " + getS2());
+		System.out.println("S3: " + getS3());
+		
+	
+	
+
+	}
+	
+	public static double getPivotPoint()
+	{
+		pivotPoint = (previousHigh + previousLow + previousClose) / 3;
+		return pivotPoint;
+	}
+	
+	public static double getR1()
+	{
+		resistance1 = (2 * pivotPoint) - previousLow;
+		return resistance1;
+	}
+	
+	public static double getR2()
+	{
+		return pivotPoint + (previousHigh - previousLow);
+	}
+	
+	public static double getR3()
+	{
+		resistance3 = resistance1 +  previousHigh - previousLow;
+		return resistance3;
+	}
+	
+	
+	
+	public static double getS1()
+	{
+		 support1 = (2 * pivotPoint) - previousHigh;
+		 return support1;
+	}
+	
+	public static double getS2()
+	{
+		  support2 =  pivotPoint -  (resistance1  - support1);
+		 return support2;
+	}
+	
+	public static double getS3()
+	{
+		 support3 = support1 - (previousHigh - previousLow);
+		 return support3;
+	}
+}
+
+
+
+
+
+
+//Dax for 17.11.2014
+//	Pivot Points: 9235.0   
+//	R1: 9287.0
+//	R2: 9341.0
+//	R3: 9393.0
+//	S1: 9181.0
+//	S2: 9129.0
+//	S3: 9075.0

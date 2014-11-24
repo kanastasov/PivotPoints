@@ -1,0 +1,91 @@
+
+public class PivotPoints 
+{
+	public  static double previousHigh = 9399;
+	public  static double previousLow = 9168;
+	public  static double previousClose = 9233;
+	public static double pivotPoint;
+	public static double  resistance1;
+	public static double  support1; 
+	public static double  resistance2;
+	public static double  support2; 
+	public static double  resistance3;
+	public static double  support3; 
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) 
+	{
+	
+		  pivotPoint = (previousHigh + previousLow + previousClose) / 3;
+		 
+//		  resistance1 = (2 * pivotPoint) - previousLow;
+//		  support1 = (2 * pivotPoint) - previousHigh;
+		 
+			
+//		  resistance2 = (pivotPoint - support1) + resistance1;
+//		 double support2 =  pivotPoint -  (resistance1  - support1);
+//		 
+		 
+		  resistance3 = resistance1 +  previousHigh - previousLow;
+		  support3 = support1 - (previousHigh - previousLow);
+		 
+		 
+		 
+		System.out.println("Pivot Points: " + pivotPoint);
+		System.out.println("R1: " + resistance1);
+		System.out.println("R2: " +  getR2());
+		System.out.println("R3: " + resistance3);
+		System.out.println("S1: " + support1);
+		System.out.println("S2: " + getS2());
+		System.out.println("S3: " + support3);
+		
+	
+
+
+	}
+
+	public static double getR1()
+	{
+		resistance1 = (2 * pivotPoint) - previousLow;
+		 return resistance1;
+	}
+	
+	public static double getR2()
+	{
+		resistance2 = (pivotPoint - support1) + resistance1;
+		 return resistance2;
+	}
+	
+	
+	
+	public static double getS1()
+	{
+		 support1 = (2 * pivotPoint) - previousHigh;
+		 return support1;
+	}
+	
+	public static double getS2()
+	{
+		  support2 =  pivotPoint -  (resistance1  - support1);
+		 return support2;
+	}
+	
+	public static double getS3()
+	{
+		 support3 = support1 - (previousHigh - previousLow);
+		 return support3;
+	}
+}
+//Dax for 17.11.2014
+//	Pivot Points: 9235.0   
+//	R1: 9287.0
+//	R2: 9341.0
+//	R3: 9393.0
+//	S1: 9181.0
+//	S2: 9129.0
+//	S3: 9075.0

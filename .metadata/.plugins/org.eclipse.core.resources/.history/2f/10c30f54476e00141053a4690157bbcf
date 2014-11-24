@@ -1,0 +1,15 @@
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.out.println("Pivot Points");
+	}
+
+}
+
+
+//Pivot Point = (Previous High + Previous Low + Previous Close) / 3
+//
+//The pivot point can then be used to determine levels of estimated support and resistance levels for the day:

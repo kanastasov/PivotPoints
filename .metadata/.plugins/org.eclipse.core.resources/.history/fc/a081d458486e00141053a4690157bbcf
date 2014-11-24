@@ -1,0 +1,37 @@
+
+public class PivotPoints {
+
+	 
+	
+	public  static double previousHigh = 9289;
+	public  static double previousLow = 9183;
+	public  static double previousClose = 9233;
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		 
+	
+		 double pivotPoint = (previousHigh + previousLow + previousClose) / 3;
+			
+		System.out.println("Pivot Points: " + pivotPoint);
+	}
+
+}
+
+
+//Pivot Point = (Previous High + Previous Low + Previous Close) / 3
+//
+//The pivot point can then be used to determine levels of estimated support and resistance levels for the day:
+//Resistance Level 1 = (2 * Pivot Point) - Previous Low
+//Support Level 1 = (2 * Pivot Point) - Previous High
+//
+//Resistance Level 2 = (Pivot Point - Support Level 1) + Resistance Level 1
+//
+//Support Level 2 = Pivot Point - (Resistance Level 1 - Support Level 1)
+//
+//Resistance Level 3 = (Pivot Point - Support Level 2) + Resistance Level 2
+//
+//Support Level 3 = Pivot Point - (Resistance Level 2 - Support Level 2)
